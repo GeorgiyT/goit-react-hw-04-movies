@@ -1,0 +1,18 @@
+.navigation__list {
+  list-style: none;
+  display: flex;
+  padding: 10px 30px;
+}
+
+.navigation__list li:not(:last-child) {
+  margin-right: 25px;
+}
+
+.navigation {
+  font-size: 24px;
+}
+
+.navigation__active {
+  composes: navigation;
+  color: rgb(0, 217, 255);
+}
