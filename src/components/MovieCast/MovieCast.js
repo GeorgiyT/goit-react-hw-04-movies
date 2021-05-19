@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import styles from "./MovieCast.module.css";
+import noImage from "../../images/no-image.png";
 
 class MovieCast extends Component {
   state = {
@@ -30,12 +32,12 @@ class MovieCast extends Component {
     return (
       <>
         {this.state.movieCast.length > 0 ? (
-          <ul>
+          <ul className={styles.list}>
             {this.state.movieCast.map(actor => (
-              <li key={actor.id}>
-                {actor.profile_path && <img src={`https://image.tmdb.org/t/p/w500/${actor.profile_path}`} alt="" />}
+              <li key={actor.id} className={styles.list__item}>
+                <img src={actor.profile_path ? `https://image.tmdb.org/t/p/w500/${actor.profile_path}` : noImage} alt="" />
                 <h3>{actor.name}</h3>
-                <p>{actor.character}</p>
+                <p>Character: {actor.character}</p>
               </li>
             ))}
           </ul>

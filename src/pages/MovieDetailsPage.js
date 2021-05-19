@@ -3,6 +3,8 @@ import axios from "axios";
 import { NavLink, Route } from "react-router-dom";
 import MovieCast from "../components/MovieCast/MovieCast";
 import MoviesReviews from "../components/MoviesReviews/MoviesReviews";
+import noImage from "../images/no-image.png";
+import styles from "./MovieDetailsPage.module.css";
 
 class MovieDetailsPage extends Component {
   state = {
@@ -44,7 +46,7 @@ class MovieDetailsPage extends Component {
   render() {
     return (
       <>
-        <button type="button" onClick={this.goBackFunc}>
+        <button type="button" className={styles.buttonGoBack} onClick={this.goBackFunc}>
           Go Back
         </button>
 
@@ -52,9 +54,11 @@ class MovieDetailsPage extends Component {
           <h2>К сожалению не удалось найти информацию по данному фильму!</h2>
         ) : (
           <>
-            {this.state.poster_path && (
-              <img src={`https://image.tmdb.org/t/p/w500/${this.state.poster_path}`} alt={this.state.original_title} />
-            )}
+            <img
+              className={styles.mainImage}
+              src={this.state.poster_path ? `https://image.tmdb.org/t/p/w500/${this.state.poster_path}` : noImage}
+              alt={this.state.original_title}
+            />
             <h1>
               {this.state.original_title} ({this.state.release_date?.slice(0, 4)})
             </h1>

@@ -17,7 +17,7 @@ class HomePage extends Component {
   render() {
     return (
       <>
-        <ul>
+        <ul className={styles.list}>
           {this.state.filmData.map(film => (
             <li key={film.id} className={styles.homePage__listItem}>
               <Link

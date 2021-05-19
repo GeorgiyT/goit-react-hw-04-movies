@@ -1,0 +1,23 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list__item {
+  padding: 10px;
+  list-style: none;
+  margin: 0 auto;
+}
+
+.list__item img {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.list__item h3 {
+  text-align: center;
+}
+
+.list__item p {
+  text-align: center;
+}

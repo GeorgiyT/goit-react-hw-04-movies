@@ -1,0 +1,10 @@
+.list__item {
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 0 15px;
+  list-style: none;
+}
+
+.list__item:not(:last-child) {
+  margin-bottom: 10px;
+}

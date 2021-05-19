@@ -1,3 +1,11 @@
+.list {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: blanchedalmond;
+  display: inline-block;
+}
+
 .homePage__listItem {
   color: black;
 }

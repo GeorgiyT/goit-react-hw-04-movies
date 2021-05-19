@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import styles from "./MoviesReviews.module.css";
 
 class MoviesReviews extends Component {
   state = {
@@ -35,7 +36,7 @@ class MoviesReviews extends Component {
         {this.state.reviews.length > 0 ? (
           <ul>
             {this.state.reviews.map(review => (
-              <li key={review.id}>
+              <li key={review.id} className={styles.list__item}>
                 <h3>{review.author}</h3>
                 <p>{review.content}</p>
               </li>

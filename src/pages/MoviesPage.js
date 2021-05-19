@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import styles from "./MoviesPage.module.css";
 
 class MoviesPage extends Component {
   state = {
@@ -43,11 +44,11 @@ class MoviesPage extends Component {
   render() {
     return (
       <>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className={styles.form}>
           <input type="text" value={this.state.inputValue} onChange={this.handleChange} />
           <button type="submit">Search</button>
         </form>
-        <ul>
+        <ul className={this.state.data.length ? styles.list : ""}>
           {this.state.data.map(elem => (
             <li key={elem.id}>
               <NavLink
